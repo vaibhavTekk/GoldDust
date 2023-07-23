@@ -1,6 +1,7 @@
 import "../styles/globals.css";
+import Sidebar from "../components/Sidebar";
 // include styles from the ui package
-import "ui/styles.css";
+// import "ui/styles.css";
 
 export default function RootLayout({
   children,
@@ -8,8 +9,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-zinc-900">
-      <body>{children}</body>
+    <html lang="en">
+      <body>
+        <Sidebar></Sidebar>
+        <div className="ml-64 p-4 min-h-screen">
+        {children}
+        </div>
+      </body>
     </html>
   );
 }
